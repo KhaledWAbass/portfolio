@@ -311,6 +311,7 @@ body {
           }
           &:hover {
             border: 1px solid $primary-color;
+            transform: scale(1.2);
           }
 
           img {
@@ -319,6 +320,10 @@ body {
             margin-top: 40px;
             object-fit: cover;
             height: 400px;
+            @media (max-width:991px) {
+              width: 200px;
+              height: 200px;
+            }
           }
         }
 
@@ -397,6 +402,9 @@ body {
         justify-content: space-between;
         gap: 5%;
         flex-direction: row;
+        @media (max-width:991px) {
+          flex-direction: column;
+        }
         .card {
           width: 47.5%;
           opacity: 0;
@@ -405,6 +413,9 @@ body {
           background-color: $safe-bac;
           height: 500px;
           transition: $transition;
+                  @media (max-width:991px) {
+                    width: 100%;
+        }
           &:hover {
             border: 1px solid $primary-color;
             transform: scale(1.1);
@@ -481,6 +492,9 @@ body {
         display: grid;
         grid-template-columns: repeat(3, minmax(0, 1fr));
         gap: 20px;
+        @media (max-width:991px) {
+          grid-template-columns: repeat(1, minmax(0, 1fr));
+        }
 
         a {
           padding: 20px;

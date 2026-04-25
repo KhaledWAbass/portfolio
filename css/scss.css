@@ -276,6 +276,7 @@ body::before {
 }
 .pageShell .main #about .about-content .img:hover {
   border: 1px solid #7ef0c5;
+  transform: scale(1.2);
 }
 .pageShell .main #about .about-content .img img {
   border-radius: 50%;
@@ -284,6 +285,12 @@ body::before {
   -o-object-fit: cover;
      object-fit: cover;
   height: 400px;
+}
+@media (max-width: 991px) {
+  .pageShell .main #about .about-content .img img {
+    width: 200px;
+    height: 200px;
+  }
 }
 .pageShell .main #about .about-content .info {
   display: flex;
@@ -360,6 +367,11 @@ body::before {
   gap: 5%;
   flex-direction: row;
 }
+@media (max-width: 991px) {
+  .pageShell .main #projects .conProject {
+    flex-direction: column;
+  }
+}
 .pageShell .main #projects .conProject .card {
   width: 47.5%;
   opacity: 0;
@@ -368,6 +380,11 @@ body::before {
   background-color: rgba(12, 25, 45, 0.78);
   height: 500px;
   transition: all 0.3s ease;
+}
+@media (max-width: 991px) {
+  .pageShell .main #projects .conProject .card {
+    width: 100%;
+  }
 }
 .pageShell .main #projects .conProject .card:hover {
   border: 1px solid #7ef0c5;
@@ -445,6 +462,11 @@ body::before {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 20px;
+}
+@media (max-width: 991px) {
+  .pageShell .main #contact .cards {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
 }
 .pageShell .main #contact .cards a {
   padding: 20px;

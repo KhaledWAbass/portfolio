@@ -1,6 +1,6 @@
+// selecetor
 const DOM = {
   li: document.querySelectorAll("nav ul li"),
-  a: document.querySelectorAll("nav ul li a"),
   nav: document.querySelector("nav"),
   Header: document.querySelector("header"),
   butnMenu: document.querySelector(".menu-btn"),
@@ -11,15 +11,19 @@ const DOM = {
     ".pageShell .main #about .about-content .info .skills",
   ),
   img: document.querySelector(".pageShell .main #about .about-content .img"),
+  button: document.querySelector(".pageShell .main #projects button"),
   conProject: document.querySelector(".pageShell .main #projects .conProject"),
 };
-document
-  .querySelector(".pageShell .main .hero .left")
-  .classList.add("animation");
-document
-  .querySelector(".pageShell .main .hero .right")
-  .classList.add("animation");
-document.querySelector(".pageShell header").classList.add("animation");
+// event
+DOM.button.addEventListener(
+  "click",
+  () => (window.location = "/projects.html"),
+);
+// code
+DOM.left ? DOM.left.classList.add("animation") : null;
+document;
+DOM.right ? DOM.right.classList.add("animation") : null;
+DOM.Header.classList.add("animation");
 DOM.li.forEach((l) => {
   l.addEventListener("click", (li) => {
     DOM.li.forEach((l) => l.classList.remove("active"));
