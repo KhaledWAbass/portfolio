@@ -37,6 +37,28 @@ body::before {
 .pageShell {
   position: relative;
 }
+.pageShell .UP {
+  position: fixed;
+  bottom: 20px;
+  border-radius: 50%;
+  padding: 10px;
+  z-index: 20;
+  width: 50px;
+  height: 50px;
+  left: 20px;
+  justify-content: center;
+  color: #a9b6c9;
+  transition: all 0.3s ease;
+  align-items: center;
+  cursor: pointer;
+  display: none;
+  background-color: #08101a;
+  border: 1px solid #7ef0c5;
+  opacity: 0;
+}
+.pageShell .UP:hover {
+  transform: scale(1.2);
+}
 .pageShell header {
   position: sticky;
   opacity: 0;
@@ -88,29 +110,20 @@ body::before {
 }
 @media (max-width: 991px) {
   .pageShell header nav {
-    display: none;
+    position: fixed;
+    right: 900px;
+    top: 80px;
     opacity: 0;
     transition: all 0.3s ease;
-  }
-  .pageShell header nav.open {
-    opacity: 0;
-    display: block;
-    position: absolute;
-    top: 0;
-    transition: all 0.3s ease;
-    flex-direction: column;
-    background-color: rgba(8, 16, 29, 0.7215686275);
+    background-color: rgba(12, 25, 45, 0.78);
     width: 100%;
-    left: 0;
-    border-radius: 50px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    animation: open 0.5s ease-in-out alternate;
+    border-radius: 29px;
   }
-  .pageShell header nav.open ul {
+  .pageShell header nav ul {
     flex-direction: column;
     gap: 0;
   }
-  .pageShell header nav.open ul li {
+  .pageShell header nav ul li {
     width: 100%;
     text-align: center;
     padding: 15px 0;
@@ -388,7 +401,7 @@ body::before {
 }
 .pageShell .main #projects .conProject .card:hover {
   border: 1px solid #7ef0c5;
-  transform: scale(1.1);
+  transform: scale(1.2);
 }
 .pageShell .main #projects .conProject .card .img {
   height: 50%;
@@ -440,6 +453,7 @@ body::before {
   background-color: rgba(126, 240, 197, 0.8);
   color: #08101a;
   text-decoration: none;
+  cursor: pointer;
   font-weight: 500;
   width: -moz-fit-content;
   width: fit-content;
@@ -487,6 +501,11 @@ body::before {
   animation: ups 2s ease-out forwards;
 }
 
+.show {
+  opacity: 1;
+  display: flex;
+}
+
 .animDel {
   animation: ups 2s ease-in alternate;
   animation-delay: 0.5s;
@@ -494,6 +513,14 @@ body::before {
 
 .fillbar {
   animation: fillbar 1s ease-in-out forwards;
+}
+
+.open {
+  animation: opened 0.5s ease-in-out alternate forwards;
+}
+
+.close {
+  animation: closed 0.5s ease-in-out alternate forwards;
 }
 
 @keyframes upsandown {
@@ -504,11 +531,24 @@ body::before {
     transform: translateY(50px);
   }
 }
-@keyframes open {
-  100% {
-    display: block;
+@keyframes opened {
+  0% {
+    right: 900px;
     opacity: 1;
-    top: 80px;
+  }
+  100% {
+    right: 0;
+    opacity: 1;
+  }
+}
+@keyframes closed {
+  100% {
+    right: 900px;
+    opacity: 1;
+  }
+  0% {
+    right: 0;
+    opacity: 1;
   }
 }
 @keyframes ups {
